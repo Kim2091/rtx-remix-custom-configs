@@ -11,18 +11,20 @@ To use these, simply:
 5. Copy the contents at the bottom of the game's `rtx.conf`
 6. Press Save
 
-Presets:
-"Low" - prioritizes visuals while improving performance. Uses Transformer Ray Reconstruction (RR)
+### **Presets:**
+__Low__ - prioritizes visuals while improving performance. Uses Transformer Ray Reconstruction (RR)
 
-"Ultra Low" - gives up a bit more in visual quality to improve performance further. Uses Transformer RR
+__Ultra Low__ - gives up a bit more in visual quality to improve performance further. Uses Transformer RR
 
-"Potato" - is for the absolute lowest end hardware, but still tries to maintain a clear image using Transformer RR
+__Potato__ - is for the absolute lowest end hardware, but still tries to maintain a clear image using Transformer RR
 
-"PurePotato" - is for straight up potato hardware that needs as much performance as it can get. This one sacrifices all extra visuals, excluding path tracing itself. Things like volumetrics, bloom, DLSS Transformer Ray Reconstruction, etc. are thrown away
+__PurePotato__ - is for straight up potato hardware that needs as much performance as it can get. This one sacrifices all extra visuals, excluding path tracing itself. Things like volumetrics, bloom, DLSS Transformer Ray Reconstruction, etc. are thrown away
 
-"HL2_RTX_Darker" - For HL2 RTX Only. Changes the tonemapper and eye adaptation settings to be a bit darker, more like the original game 
+__HL2_RTX_Darker__ - For HL2 RTX Only. Changes the tonemapper and eye adaptation settings to be a bit darker, more like the original game 
+
 
 -------------
+
 
 Tips:
 
