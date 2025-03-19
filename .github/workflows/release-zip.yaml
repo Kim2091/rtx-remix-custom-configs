@@ -20,8 +20,7 @@ jobs:
       - name: Zip the repository
         run: |
           # Extract tag name without 'v' prefix if present
-          TAG_NAME="${{ github.event.release.tag_name }}"
-          ZIP_NAME="rtx-remix-custom-configs-${TAG_NAME}"
+          ZIP_NAME="rtx-remix-custom-configs"
           
           zip -r "${ZIP_NAME}.zip" . -x "*.git*"
           
