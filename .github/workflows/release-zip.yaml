@@ -1,4 +1,4 @@
-name: Create and Attach ZIP to Release
+name: Create Zip Archive on Release
 
 on:
   release:
@@ -8,30 +8,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch all history so we get all tags
+          fetch-depth: 0  # Fetch all history for proper versioning
 
-      - name: Create ZIP file
+      - name: Zip the repository
         run: |
-          # Get the tag name
-          TAG_NAME=${GITHUB_REF#refs/tags/}
+          # Extract tag name without 'v' prefix if present
+          TAG_NAME="${{ github.event.release.tag_name }}"
+          ZIP_NAME="rtx-remix-custom-configs-${TAG_NAME}"
           
-          # Create a custom zip file name
-          ZIP_NAME="${GITHUB_REPOSITORY#*/}-$TAG_NAME.zip"
+          zip -r "${ZIP_NAME}.zip" . -x "*.git*"
           
-          # Create the zip file (excluding .git directory)
-          zip -r "$ZIP_NAME" . -x "*.git*"
-          
-          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
-
-      - name: Upload ZIP to release
-        uses: actions/upload-release-asset@v1
+      - name: Upload zip to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: rtx-remix-custom-configs-${{ github.event.release.tag_name }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./${{ env.ZIP_NAME }}
-          asset_name: ${{ env.ZIP_NAME }}
-          asset_content_type: application/zip
