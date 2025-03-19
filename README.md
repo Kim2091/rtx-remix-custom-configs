@@ -20,7 +20,7 @@ __Potato__ - is for the absolute lowest end hardware, but still tries to maintai
 
 __PurePotato__ - is for straight up potato hardware that needs as much performance as it can get. This one sacrifices all extra visuals, excluding path tracing itself. Things like volumetrics, bloom, DLSS Transformer Ray Reconstruction, etc. are thrown away
 
-__HL2_RTX_Darker__ - For HL2 RTX Only. Changes the tonemapper and eye adaptation settings to be a bit darker, more like the original game 
+__HL2_RTX_Darker__ - For HL2 RTX Only. Changes the tonemapper and eye adaptation settings to be a bit darker, more like the original game. Just copy this into the game's rtx.conf in combination with any of the others.
 
 
 -------------
