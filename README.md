@@ -7,8 +7,8 @@ To use these, simply:
 2. Navigate to the game folder
   - If you're following this for HL2 RTX: In Steam, right click HL2 RTX, Browse Files
 3. Open the `rtx.conf` file that you wish to modify
-4. Open the conf file in the zip that you want to apply
-5. Copy the contents into the game's `rtx.conf`
+4. In the zip, navigate to the presets folder and open the .conf file that you want to apply
+5. Copy the contents at the bottom of the game's `rtx.conf`
 6. Press Save
 
 Presets:
